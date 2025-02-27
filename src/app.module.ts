@@ -27,6 +27,7 @@ import { AllConfigType } from './config/config.type';
 import { SessionModule } from './session/session.module';
 import { MailerModule } from './mailer/mailer.module';
 import { TransformerModule } from './transformer/transformer.module';
+import { WaviotModule } from './waviot/waviot.module';
 
 const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
   useClass: TypeOrmConfigService,
@@ -88,6 +89,7 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
     MailerModule,
     HomeModule,
     TransformerModule,
+    WaviotModule,
   ],
 })
 export class AppModule {}

@@ -1,8 +1,10 @@
 # NestJS REST API boilerplate 🇰🇿
 
- npx nest generate module transformer
-  npx nest generate module transformer
-  npx nest generate service transformer
+npx nest generate module users
+npx nest generate service users/user
+npx nest generate controller users/user
+npx nest generate service myService --flat
+
 <br />
 <p align="center"><a href="https://discord.com/channels/520622812742811698/1197293125434093701"><img src="https://github.com/brocoders/nestjs-boilerplate/assets/72293912/c9d5fbf0-b56d-46b5-bb30-f96f44764bae" width="300"/></a></p>
 <br />
@@ -43,27 +45,44 @@ Belongs to the [bc boilerplates](https://bcboilerplates.com/) ecosystem
 - [x] Docker.
 - [x] CI (Github Actions).
 
-## Contributors
+В NestJS можно сгенерировать различные структуры с помощью `npx nest generate`. Вот основные доступные команды:
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shchepotin"><img src="https://avatars.githubusercontent.com/u/6001723?v=4?s=100" width="100px;" alt="Vladyslav Shchepotin"/><br /><sub><b>Vladyslav Shchepotin</b></sub></a><br /><a href="#maintenance-Shchepotin" title="Maintenance">🚧</a> <a href="#doc-Shchepotin" title="Documentation">📖</a> <a href="#code-Shchepotin" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SergeiLomako"><img src="https://avatars.githubusercontent.com/u/31205374?v=4?s=100" width="100px;" alt="SergeiLomako"/><br /><sub><b>SergeiLomako</b></sub></a><br /><a href="#code-SergeiLomako" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ElenVlass"><img src="https://avatars.githubusercontent.com/u/72293912?v=4?s=100" width="100px;" alt="Elena Vlasenko"/><br /><sub><b>Elena Vlasenko</b></sub></a><br /><a href="#doc-ElenVlass" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://brocoders.com"><img src="https://avatars.githubusercontent.com/u/226194?v=4?s=100" width="100px;" alt="Rodion"/><br /><sub><b>Rodion</b></sub></a><br /><a href="#business-sars" title="Business development">💼</a></td>
-    </tr>
-  </tbody>
-</table>
+### 📌 **Генерация модулей и компонентов**
+| Команда | Описание |
+|---------|----------|
+| `npx nest generate module <name>` | Генерирует модуль |
+| `npx nest generate controller <name>` | Генерирует контроллер |
+| `npx nest generate service <name>` | Генерирует сервис |
+| `npx nest generate provider <name>` | Генерирует провайдер |
+| `npx nest generate middleware <name>` | Генерирует middleware |
+| `npx nest generate guard <name>` | Генерирует guard (защита маршрутов) |
+| `npx nest generate interceptor <name>` | Генерирует interceptor (перехватчик запросов) |
+| `npx nest generate pipe <name>` | Генерирует pipe (валидация и трансформация данных) |
+| `npx nest generate resolver <name>` | Генерирует GraphQL resolver |
+| `npx nest generate gateway <name>` | Генерирует WebSocket gateway |
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+### 🎯 **Дополнительные опции**
+Каждой команде можно передавать **флаг `--flat`**, который генерирует файлы без отдельной папки:
+```sh
+npx nest generate service myService --flat
+```
+Это создаст `myService.service.ts` прямо в текущей папке.
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+Можно также указать путь для генерации:
+```sh
+npx nest generate module users
+npx nest generate service users/user
+npx nest generate controller users/user
+```
+Это создаст файлы внутри `src/users/`.
 
-## Support
-
-If you seek consulting, support, or wish to collaborate, please contact us via [boilerplates@brocoders.com](mailto:boilerplates@brocoders.com). For any inquiries regarding boilerplates, feel free to ask on [GitHub Discussions](https://github.com/brocoders/nestjs-boilerplate/discussions) or [Discord](https://discord.com/channels/520622812742811698/1197293125434093701).
+### 🛠 **Генерация с использованием сокращенного синтаксиса**
+Можно использовать **сокращенные команды**:
+```sh
+npx nest g mo <name>  # module
+npx nest g co <name>  # controller
+npx nest g s <name>   # service
+npx nest g p <name>   # pipe
+npx nest g gu <name>  # guard
+npx nest g mi <name>  # middleware
+```
