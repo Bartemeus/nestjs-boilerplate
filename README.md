@@ -48,36 +48,44 @@ Belongs to the [bc boilerplates](https://bcboilerplates.com/) ecosystem
 В NestJS можно сгенерировать различные структуры с помощью `npx nest generate`. Вот основные доступные команды:
 
 ### 📌 **Генерация модулей и компонентов**
-| Команда | Описание |
-|---------|----------|
-| `npx nest generate module <name>` | Генерирует модуль |
-| `npx nest generate controller <name>` | Генерирует контроллер |
-| `npx nest generate service <name>` | Генерирует сервис |
-| `npx nest generate provider <name>` | Генерирует провайдер |
-| `npx nest generate middleware <name>` | Генерирует middleware |
-| `npx nest generate guard <name>` | Генерирует guard (защита маршрутов) |
-| `npx nest generate interceptor <name>` | Генерирует interceptor (перехватчик запросов) |
-| `npx nest generate pipe <name>` | Генерирует pipe (валидация и трансформация данных) |
-| `npx nest generate resolver <name>` | Генерирует GraphQL resolver |
-| `npx nest generate gateway <name>` | Генерирует WebSocket gateway |
+
+| Команда                                | Описание                                           |
+| -------------------------------------- | -------------------------------------------------- |
+| `npx nest generate module <name>`      | Генерирует модуль                                  |
+| `npx nest generate controller <name>`  | Генерирует контроллер                              |
+| `npx nest generate service <name>`     | Генерирует сервис                                  |
+| `npx nest generate provider <name>`    | Генерирует провайдер                               |
+| `npx nest generate middleware <name>`  | Генерирует middleware                              |
+| `npx nest generate guard <name>`       | Генерирует guard (защита маршрутов)                |
+| `npx nest generate interceptor <name>` | Генерирует interceptor (перехватчик запросов)      |
+| `npx nest generate pipe <name>`        | Генерирует pipe (валидация и трансформация данных) |
+| `npx nest generate resolver <name>`    | Генерирует GraphQL resolver                        |
+| `npx nest generate gateway <name>`     | Генерирует WebSocket gateway                       |
 
 ### 🎯 **Дополнительные опции**
+
 Каждой команде можно передавать **флаг `--flat`**, который генерирует файлы без отдельной папки:
+
 ```sh
 npx nest generate service myService --flat
 ```
+
 Это создаст `myService.service.ts` прямо в текущей папке.
 
 Можно также указать путь для генерации:
+
 ```sh
 npx nest generate module users
 npx nest generate service users/user
 npx nest generate controller users/user
 ```
+
 Это создаст файлы внутри `src/users/`.
 
 ### 🛠 **Генерация с использованием сокращенного синтаксиса**
+
 Можно использовать **сокращенные команды**:
+
 ```sh
 npx nest g mo <name>  # module
 npx nest g co <name>  # controller
@@ -86,3 +94,5 @@ npx nest g p <name>   # pipe
 npx nest g gu <name>  # guard
 npx nest g mi <name>  # middleware
 ```
+
+npx prettier --write .

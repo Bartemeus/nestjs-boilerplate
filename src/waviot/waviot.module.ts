@@ -4,6 +4,6 @@ import { WaviotController } from './waviot.controller';
 
 @Module({
   providers: [WaviotService],
-  controllers: [WaviotController]
+  controllers: [WaviotController],
 })
 export class WaviotModule {}
